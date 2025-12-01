@@ -73,10 +73,10 @@ sudo yum install nginx -y
 sudo apt install openjdk-11-jdk -y
 sudo yum install java-11-openjdk -y
 ```
-![alt text](../Evidences/4.png)
-![alt text](../Evidences/5.png)
-![alt text](../Evidences/6.png)
-![alt text](../Evidences/7.png)
+![alt text](Evidences/4.png)
+![alt text](Evidences/5.png)
+![alt text](Evidences/6.png)
+![alt text](Evidences/7.png)
 
 
 
@@ -100,9 +100,9 @@ df -h
 top
 ps aux
 ```
-![alt text](../Evidences/8.png)
-![alt text](../Evidences/9.png)
-![alt text](../Evidences/10.png)
+![alt text](Evidences/8.png)
+![alt text](Evidences/9.png)
+![alt text](Evidences/10.png)
 
 
 ---
@@ -124,8 +124,8 @@ crontab -e
 # Example backup job (runs daily at 1AM)
 0 1 * * * tar -czf /opt/backup/project-$(date +\%F).tar.gz /opt/myproject
 ```
-![alt text](../Evidences/11.png)
-![alt text](../Evidences/12.png)
+![alt text](Evidences/11.png)
+![alt text](Evidences/12.png)
 
 ---
 
@@ -136,12 +136,12 @@ crontab -e
 ```bash
 vi /usr/local/bin/log_cleanup.sh
 ```
-![alt text](../Evidences/13.png)
+![alt text](Evidences/13.png)
 ```bash
 #!/bin/bash
 find /var/log/myapp -type f -mtime +7 -delete
 ```
-![alt text](../Evidences/14.png)
+![alt text](Evidences/14.png)
 ```bash
 chmod +x /usr/local/bin/log_cleanup.sh
 ```
@@ -153,12 +153,12 @@ chmod +x /usr/local/bin/log_cleanup.sh
 ```bash
 vi /usr/local/bin/restart_service.sh
 ```
-![alt text](../Evidences/16.png)
+![alt text](Evidences/16.png)
 ```bash
 #!/bin/bash
 systemctl restart nginx
 ```
-![alt text](../Evidences/17.png)
+![alt text](Evidences/17.png)
 ---
 
 ### **Health check script**
@@ -166,7 +166,7 @@ systemctl restart nginx
 ```bash
 vi /usr/local/bin/health_check.sh
 ```
-![alt text](../Evidences/18.png)
+![alt text](Evidences/18.png)
 ```bash
 #!/bin/bash
 echo "CPU:"
@@ -176,7 +176,7 @@ free -h
 echo "Disk:"
 df -h
 ```
-![alt text](../Evidences/19.png)
+![alt text](Evidences/19.png)
 ---
 
 ## ✔ **Log Management**
@@ -194,7 +194,7 @@ tail -f messages   # RHEL
 grep -i "error" /var/log/syslog
 ```
 ![alt text](image-2.png)
-![alt text](../Evidences/21.png)
+![alt text](Evidences/21.png)
 ---
 
 ## ✔ **System Performance Monitoring**
@@ -209,10 +209,10 @@ iostat
 journalctl -u nginx
 systemctl status nginx
 ```
-![alt text](../Evidences/22.png)
-![alt text](../Evidences/23.png)
-![alt text](../Evidences/24.png)
-![alt text](../Evidences/25.png)
+![alt text](Evidences/22.png)
+![alt text](Evidences/23.png)
+![alt text](Evidences/24.png)
+![alt text](Evidences/25.png)
 ---
 
 # 📕 **Level 3 – Advanced (Production-Ready Linux Admin)**
@@ -245,7 +245,7 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl enable --now myapp
 ```
-![alt text](../Evidences/26.png)
+![alt text](Evidences/26.png)
 ---
 
 ## ✔ **SSH Hardening**
@@ -263,13 +263,13 @@ PermitRootLogin no
 PasswordAuthentication no
 Port 2222
 ```
-![alt text](../Evidences/27.png)
+![alt text](Evidences/27.png)
 Apply changes:
 
 ```bash
 sudo systemctl restart sshd
 ```
-![alt text](../Evidences/28.png)
+![alt text](Evidences/28.png)
 ---
 
 ## ✔ **LVM Setup**
@@ -296,7 +296,7 @@ sudo mkfs.ext4 /dev/appvg/applv
 sudo mkdir /mnt/appdata
 sudo mount /dev/appvg/applv /mnt/appdata
 ```
-![alt text](../Evidences/29.png)
+![alt text](Evidences/29.png)
 ---
 
 ## ✔ **Firewall Configuration**
@@ -308,7 +308,7 @@ sudo firewall-cmd --add-service=http --permanent
 sudo firewall-cmd --add-service=https --permanent
 sudo firewall-cmd --reload
 ```
-![alt text](../Evidences/30.png)
+![alt text](Evidences/30.png)
 ### **Using iptables**
 
 ```bash
@@ -316,7 +316,7 @@ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 sudo service iptables save
 ```
-![alt text](../Evidences/31.png)
+![alt text](Evidences/31.png)
 ---
 
 ## ✔ **Log Rotation**
@@ -326,7 +326,7 @@ sudo service iptables save
 ```bash
 sudo nano /etc/logrotate.d/myapp
 ```
-![alt text](../Evidences/32.png)
+![alt text](Evidences/32.png)
 ```
 /var/log/myapp/*.log {
     daily
@@ -337,13 +337,13 @@ sudo nano /etc/logrotate.d/myapp
     create 0640 root root
 }
 ```
-![alt text](../Evidences/33.png)
+![alt text](Evidences/33.png)
 Test configuration:
 
 ```bash
 sudo logrotate -d /etc/logrotate.d/myapp
 ```
-![alt text](../Evidences/34.png)
+![alt text](Evidences/34.png)
 ---
 
 
