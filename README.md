@@ -29,9 +29,7 @@ sudo passwd devuser2
 
 ```
 ![alt text](Evidences/1.png)
-![alt text](../Evidences/1.png)
-![alt text](../Evidences/2.png)
-
+![alt text](Evidences/2.png)
 ---
 
 ## ✔ **Permission Management**
@@ -51,8 +49,7 @@ sudo chmod -R 775 /opt/myproject
 # Verify permissions
 ls -l /opt
 ```
-![alt text](../Evidences/3.png)
-
+![alt text](Evidences/3.png)
 ---
 
 ## ✔ **Package Installation**
