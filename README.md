@@ -145,7 +145,7 @@ find /var/log/myapp -type f -mtime +7 -delete
 ```bash
 chmod +x /usr/local/bin/log_cleanup.sh
 ```
-![alt text](image.png)
+![alt text](Evidences/15.png)
 ---
 
 ### **Service restart script**
@@ -193,7 +193,7 @@ tail -f messages   # RHEL
 # Search logs
 grep -i "error" /var/log/syslog
 ```
-![alt text](image-2.png)
+![alt text](Evidences/20.png)
 ![alt text](Evidences/21.png)
 ---
 
