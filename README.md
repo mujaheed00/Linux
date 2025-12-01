@@ -26,7 +26,9 @@ sudo useradd -m -G devteam devuser2
 # Set passwords
 sudo passwd devuser1
 sudo passwd devuser2
+
 ```
+![alt text](Evidences/1.png)
 ![alt text](../Evidences/1.png)
 ![alt text](../Evidences/2.png)
 
